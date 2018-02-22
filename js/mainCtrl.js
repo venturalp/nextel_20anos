@@ -1,5 +1,5 @@
 (function () {
-	angular.module("nextelApp").controller('mainCtrl', ['$scope', 'api', function ($scope, api) {
+	angular.module("nextelApp").controller('mainCtrl', ['$scope', 'api', '$filter', function ($scope, api, $filter) {
 		$scope.configBanner = {
 			enabled: true,
 			autoplay: true,
@@ -27,7 +27,7 @@
 				}
 			}
 		};
-		
+
 		$scope.produtos = [
 			{
 				img: 'images/ico-roaming.png',

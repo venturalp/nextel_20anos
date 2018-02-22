@@ -298,6 +298,59 @@ select::-ms-expand {
   font-size: 0.875rem;
   color: #fff;
 }
+@media only screen and (max-width: 1070px) {
+  #banners .banner .highlight .size {
+    font-weight: bold;
+    color: #ff6b0f;
+    font-size: 70px;
+    font-size: 4.375rem;
+    line-height: 70px;
+  }
+  #banners .banner .highlight .size .big {
+    font-size: 100px;
+    font-size: 6.25rem;
+  }
+  #banners .banner .highlight .subtitle {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  #banners .banner .highlight .plus>div:first-child {
+    font-weight: bold;
+    font-size: 90px;
+    font-size: 5.625rem;
+    padding-right: 5px;
+    line-height: 65px;
+  }
+  #banners .banner .highlight .plus>div:last-child {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+  #banners .banner .highlight .subtitle-small {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+  #banners .banner .highlight .promo .info {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+  #banners .banner .highlight .promo .price>div:first-child {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  #banners .banner .highlight .promo .price>div:nth-child(2) {
+    font-size: 100px;
+    font-size: 6.25rem;
+    line-height: 70px;
+  }
+  #banners .banner .highlight .promo .price>div:nth-child(3) {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+  #banners .banner .highlight .promo .price>div:nth-child(3) p {
+    font-size: 12px;
+    font-size: 0.75rem;
+  }
+}
 #banners .slick-dots {
   position: absolute;
   bottom: 20px;
@@ -386,6 +439,47 @@ select::-ms-expand {
   color: #fe4701;
   margin-left: 30px;
 }
+@media only screen and (max-width: 1070px) {
+  .contrate .content {
+    padding: 0px;
+  }
+  .contrate .customer-type h2 {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  .contrate .customer-type>div label {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .contrate .customer-type {
+    margin-bottom: 20px;
+    padding-top: 0px;
+  }
+  .contrate .customer-type h2 {
+    display: none;
+  }
+  .contrate .customer-type>div {
+    position: relative;
+    text-align: center;
+  }
+  .contrate .customer-type>div label:first-child {
+    margin-left: 0px;
+  }
+  .contrate .customer-type>div input[type=radio] {
+    border: 1px solid #fe4701;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .contrate .customer-type>div label {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+  .contrate .customer-type>div input[type=radio] {
+    margin-right: 5px;
+  }
+}
 .contrate .form {
   padding: 30px 0px;
 }
@@ -431,6 +525,39 @@ select::-ms-expand {
 .contrate .form>div:last-child>div:last-child {
   padding-left: 72px;
 }
+@media only screen and (max-width: 1200px) {
+  .contrate .form>div:first-child {
+    width: 70%;
+  }
+  .contrate .form>div:last-child>div:last-child {
+    padding-left: 20px;
+  }
+  .contrate .form>div:last-child>div:first-child {
+    width: 40%;
+  }
+  .contrate .form>div:last-child>div:nth-child(2) {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .contrate .form>div:first-child {
+    width: 100%;
+  }
+  .contrate .form>div:last-child>div {
+    display: block;
+  }
+  .contrate .form>div:last-child>div:first-child,
+  .contrate .form>div:last-child>div:nth-child(2) {
+    width: 100%;
+    padding-left: 0px;
+    margin-bottom: 20px;
+  }
+  .contrate .form>div:last-child>div:last-child {
+    max-width: 260px;
+    padding-left: 0px;
+    margin: 0 auto;
+  }
+}
 .btn {
   cursor: pointer;
   -webkit-border-radius: 28px;
@@ -475,6 +602,7 @@ input[type=text] {
   font-weight: 300;
   padding: 12px 0px;
   border: 0px;
+  color: #fe4701;
   appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
@@ -509,6 +637,12 @@ input[type=text]:focus:-ms-input-placeholder {
 }
 input[type=text]:focus:-moz-placeholder {
   color: #cc3000;
+}
+@media only screen and (max-width: 1070px) {
+  input[type=text] {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
 }
 .planos {
   padding: 55px 0px 48px;
