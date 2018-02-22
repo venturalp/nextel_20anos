@@ -3,6 +3,7 @@ var rename = require('gulp-rename');
 var cleanCSS = require('gulp-clean-css');
 var rupture = require('rupture');
 var stylus = require('gulp-stylus');
+var nodemon = require('gulp-nodemon');
 
 gulp.task('default', ['watch', 'comp-stylus']);
 

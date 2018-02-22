@@ -150,6 +150,11 @@ body {
   width: 1280px;
   margin: 0 auto;
 }
+@media only screen and (max-width: 1280px) {
+  .content {
+    width: 95%;
+  }
+}
 select::-ms-expand {
   display: none;
 }
@@ -381,7 +386,7 @@ select::-ms-expand {
   margin-left: 30px;
 }
 .contrate .form {
-  padding-top: 30px;
+  padding: 30px 0px;
 }
 .contrate .form>div {
   margin-bottom: 11px;
@@ -391,6 +396,77 @@ select::-ms-expand {
 }
 .contrate .form>div:first-child input {
   width: 100%;
+}
+.contrate .form>div:last-child {
+  display: table;
+  width: 100%;
+}
+.contrate .form>div:last-child a {
+  cursor: pointer;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  color: #fe4701;
+  line-height: 30px;
+  display: block;
+  text-decoration: none;
+}
+.contrate .form>div:last-child>div {
+  display: table-cell;
+  vertical-align: top;
+}
+.contrate .form>div:last-child>div:first-child {
+  width: 438px;
+}
+.contrate .form>div:last-child>div:nth-child(2) {
+  width: 360px;
+  padding-left: 60px;
+}
+.contrate .form>div:last-child>div:nth-child(2) input {
+  float: right;
+}
+.contrate .form>div:last-child>div input {
+  width: 100%;
+}
+.contrate .form>div:last-child>div:last-child {
+  padding-left: 72px;
+}
+.btn {
+  cursor: pointer;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -o-border-radius: 28px;
+  -ms-border-radius: 28px;
+  border-radius: 28px;
+  background-color: #fe4701;
+  height: 56px;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #fe4701;
+}
+.btn p {
+  color: #fff;
+  font-size: 20px;
+  font-size: 1.25rem;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.btn.small {
+  height: 50px;
+}
+.btn.small p {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.btn.invert {
+  background-color: #fff;
+}
+.btn.invert p {
+  color: #fe4701;
 }
 input[type=text] {
   font-size: 23px;
@@ -432,4 +508,182 @@ input[type=text]:focus:-ms-input-placeholder {
 }
 input[type=text]:focus:-moz-placeholder {
   color: #cc3000;
+}
+.planos {
+  padding-top: 55px;
+}
+.planos .btn {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+.planos #slider-planos {
+  padding: 0 50px;
+  overflow: hidden !important;
+  width: 1000px !important;
+  margin: 0 auto;
+}
+.planos #slider-planos .slick-list {
+  overflow: visible !important;
+}
+.planos #slider-planos .slick-cloned {
+  display: none !important;
+}
+.planos .plano {
+  width: 270px !important;
+  background-color: #fff;
+  height: 387px;
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  -ms-border-radius: 9px;
+  border-radius: 9px;
+  margin: 30px 25px;
+  z-index: 9999;
+  outline: none;
+  text-align: center;
+}
+.planos .plano:hover,
+.planos .plano.focus {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+  transform-origin: center;
+  transition-timing-function: ease-in-out;
+}
+.planos .plano .size {
+  background-color: #fe4701;
+  height: 185px;
+  color: #fff;
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+.planos .plano .size h2 {
+  font-size: 82px;
+  font-size: 5.125rem;
+  font-weight: bold;
+  line-height: 70px;
+}
+.planos .plano .size h3 {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  font-weight: bold;
+}
+.planos .plano .size>div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.planos .plano .price {
+  height: 202px;
+}
+.planos .plano .price>div {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.planos .plano .price>div h3 {
+  color: #000;
+  font-weight: bold;
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+.planos .plano .price>div h2 {
+  color: #000;
+  font-weight: bold;
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+.planos .plano .price>div h5 {
+  color: #000;
+  font-weight: bold;
+  font-size: 11px;
+  font-size: 0.6875rem;
+}
+.planos .plano .price>div h4 {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+.planos .plano .price>div hr {
+  width: 40%;
+  height: 1px;
+  background-color: #000;
+  border: 0px;
+  margin-bottom: 15px;
+}
+.planos .plano .price>div>div span {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+.planos .plano .price>div>div b {
+  color: #fe4701;
+  font-size: 56px;
+  font-size: 3.5rem;
+  line-height: 40px;
+}
+.planos .plano .price>div>div .symbol {
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+.planos #dots-planos {
+  position: relative;
+  margin-bottom: 50px;
+}
+.planos #dots-planos .slick-dots li {
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+.planos #dots-planos .slick-dots li button {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  width: 2px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.planos #dots-planos .slick-dots li button:before {
+  display: none;
+}
+.planos #dots-planos .slick-dots li.slick-active {
+  background-color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #fe4701;
+}
+.planos #dots-planos .slick-dots li.slick-active button {
+  background-color: #fe4701;
+  padding: 3px !important;
 }

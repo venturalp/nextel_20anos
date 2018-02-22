@@ -13,7 +13,7 @@
 
 <body ng-app="nextelApp" ng-controller="mainCtrl">
 	<header class="main-head">
-		<slick settings="slickConfig" id="banners">
+		<slick settings="configBanner" id="banners">
 			<div class="banner">
 				<div class="left">
 					<img src="images/banner1-left.jpg" />
@@ -134,13 +134,51 @@
 					</div>	
 					<div>
 						<input type="text" placeholder="* TELEFONE" ng-model="form.fone"/>
+						<a>+ Adicionar Número</a>
 					</div>	
 					<div>
-						<a class="btn">
-							ENVIAR
-						</a>
+						<div class="btn">
+							<p>ENVIAR</p>
+						</div>
 					</div>	
 				</div>
+			</div>
+		</article>		
+	</section>
+	<section class="planos">		
+		<article class="content">			
+			<slick settings="configPlanos" id="slider-planos">
+				<div ng-repeat="p in plans | orderBy:'order'" ng-class="currentPlano == $index? 'plano focus':'plano'">
+					<div class="size">
+						<div>
+							<h2>{{p.name}}</h2>
+							<h3>{{p.legend}}</h3>
+						</div>
+					</div>
+					<div class="price">
+						<div>
+							<h3>+ LIGAÇÕES</h3>
+							<h2>ILIMITADAS</h2>
+							<h5>PARA QUALQUER OPERADORA</h5>
+							<h4>PARA TODO O BRASIL</h4>
+							<hr/>
+							<div>
+								<span class="symbol">R$</span>
+								<span><b>{{p.price}}</b></span>
+								<span>/mês</span>
+							</div>
+						</div>
+					</div>
+				</div>				
+			</slick>	
+			<div id="dots-planos"></div>
+		</article>
+		<article class="content">
+			<div class="btn small">
+				<p>ADQUIRIR AGORA</p>
+			</div>
+			<div class="btn small invert">
+				<p>MAIS INFORMAÇÕES</p>
 			</div>
 		</article>
 	</section>
@@ -151,5 +189,6 @@
 <script src="angular-slick-carousel/dist/angular-slick.min.js"></script>
 <script src="js/app.js" type="text/javascript"></script>
 <script src="js/mainCtrl.js" type="text/javascript"></script>
+<script src="js/services.js" type="text/javascript"></script>
 
 </html>
