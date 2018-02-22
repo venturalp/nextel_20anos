@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: 'NIISans';
+  src: url('NIISans.eot?#iefix') format('embedded-opentype'),  url('NIISans.woff') format('woff'), url('NIISans.ttf')  format('truetype'), url('NIISans.svg#NIISans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NIISans';
+  src: url('NIISans-Bold.eot?#iefix') format('embedded-opentype'),  url('NIISans-Bold.woff') format('woff'), url('NIISans-Bold.ttf')  format('truetype'), url('NIISans-Bold.svg#NIISans-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'NIISans';
+  src: url('NIISansLight.eot?#iefix') format('embedded-opentype'),  url('NIISansLight.woff') format('woff'), url('NIISansLight.ttf')  format('truetype'), url('NIISansLight.svg#NIISansLight') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
