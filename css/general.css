@@ -344,6 +344,7 @@ select::-ms-expand {
   top: 25px;
 }
 .contrate .customer-type>div input[type=radio] {
+  outline: none;
   appearance: none;
   -webkit-appearance: none;
   -ms-appearance: none;
