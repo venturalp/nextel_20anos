@@ -271,11 +271,13 @@ input[type=text]
 			color $dark
 			
 .planos
-	padding-top 55px
+	padding 55px 0px 48px
 	& .btn
 		width 300px
 		margin 0 auto
 		margin-bottom 8px
+		display block
+		text-decoration none
 	& #slider-planos
 		padding 0 50px
 		overflow hidden !important
@@ -292,7 +294,7 @@ input[type=text]
 		box-shadow 0px 0px 30px 0px rgba(0,0,0,0.1)
 		border-radius 9px
 		margin 30px 25px
-		z-index 9999
+		z-index 3
 		outline none
 		text-align center
 		&:hover, &.focus
@@ -380,3 +382,101 @@ input[type=text]
 						background-color $mainColor
 						padding 3px !important
 						
+						
+.divider
+	height 1px
+	width 100%
+	background-color $dot-plans
+	border 0px
+	
+.todos
+	padding 54px 0px 35px
+	& .produtos
+		display table
+		padding 0 6%
+		margin-bottom 72px
+		&>div
+			display table-cell
+			vertical-align top
+			width 20%
+			text-align center
+			padding 0px 20px
+			&:first-child
+				padding 0px
+				text-align left
+				width 60%
+				set-font-size(52px)
+			& p
+				line-height 1.2
+				padding-top 20px
+				color #9b9b9b
+				set-font-size(15px)
+		& .produto.anima 
+			& img
+				animation anima-produto 3s linear 0s 1 normal none
+				transform-origin center			
+	& .obs
+		color $obs
+		set-font-size(10px)
+		line-height 15px
+		& a
+			text-decoration none
+			font-weight bold
+			color $obs
+	
+footer
+	text-align center
+	color $obs
+	set-font-size(10px)
+	width 620px
+	line-height 15px
+	padding 30px 0px
+
+.fade
+	z-index 4
+	position fixed
+	top 0
+	left 0
+	bottom 0
+	right 0
+	background-color rgba(0,0,0,0.75)
+	
+#popup
+	position fixed
+	z-index 5
+	center()
+	padding 35px
+	color $txt
+	border 1px solid $mainColor
+	background-color #fff
+	& h2
+		set-font-size(22px)
+		font-weight bold
+		margin-bottom 10px
+	& p
+		set-font-size(16px)
+		line-height 1.2
+	& .close
+		cursor pointer
+		font-weight bold
+		color $mainColor
+		margin-top 20px
+		text-align right
+		
+@keyframes anima-produto{
+	10%, 90% {
+    transform scale(1.2)
+  }
+  
+  20%, 80% {
+    transform scale(1)
+  }
+
+  30%, 50%, 70% {
+    transform scale(1.2)
+  }
+
+  40%, 60% {
+    transform scale(1)
+  }
+}

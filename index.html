@@ -108,7 +108,7 @@
 			</div>
 		</slick>
 	</header>
-	<section class="contrate">
+	<section class="contrate" id="contrate">
 		<h1>CONTRATE AGORA</h1>
 		<article class="content">
 			<div class="customer-type">
@@ -174,14 +174,47 @@
 			<div id="dots-planos"></div>
 		</article>
 		<article class="content">
-			<div class="btn small">
+			<a class="btn small" href="#contrate">
 				<p>ADQUIRIR AGORA</p>
-			</div>
-			<div class="btn small invert">
+			</a>
+			<a class="btn small invert" ng-click="openPopup()">
 				<p>MAIS INFORMAÇÕES</p>
-			</div>
+			</a>
 		</article>
 	</section>
+	<hr class="divider" />
+	<section class="todos">
+		<article class="content produtos">
+			<div>
+				TODOS<br>
+				PLANOS<br>
+				NEXTEL TÊM	
+			</div>
+			<div ng-class="$index == currentProduct? 'produto anima': 'produto'" ng-repeat="p in produtos" >
+				<img ng-src="{{p.img}}"/>
+				<p>
+					{{p.txt}}
+				</p>
+			</div>
+		</article>		
+		<article class="content obs">
+			Oferta válida para os DDDs 11, 12, 13, 14, 15, 16, 17, 19, 21, 22 e 24, para contratação por pessoa física até 30/11/2017. Velocidade de transmissão de dados na rede 3G/3G+ é de até 600 Kbps de download e 200 Kbps de upload. Na rede 4G (exclusiva para São Paulo e Rio de Janeiro), a velocidade é de até 5 Mbps para download e 380 Kbps para upload. Quando o cliente não estiver em área de cobertura 4G, utilizará a cobertura 3G/3G+. Promocionalmente até 30/11/2017, após atingida a franquia de internet, a velocidade de navegação será reduzida para 128 Kbps (download e upload). As ligações de longa distância estão condicionadas a utilização do CSP 99. O valor dos planos e os pacotes bônus de internet são válidos pelo período de fidelização de 12 meses. O cancelamento do plano antes do vencimento implicará no pagamento de multa proporcional com base no valor do benefício auferido. Ofertas exclusivas para contratação pelo canal de televendas Nextel e sujeitas à análise de crédito. Para mais informações, consulte o regulamento no site <a href="http://www.nextel.com.br" target="_blank">www.nextel.com.br</a>
+		</article>
+	</section>
+	<hr class="divider" />
+	<footer class="content">
+		© 2017 Nextel Telecomunicações Ltda. Todos os direitos reservados.<br>
+		A Nextel se compromete a respeitar a sua privacidade e é contra o spam. Leia a nossa política de privacidade para obter mais detalhes.<br>
+		ATENDIMENTO E VENDAS: 1050
+	</footer>	
+	<div class="fade" ng-show="popup.open" ng-click="closePopup()"></div>
+	<div id="popup" ng-show="popup.open">		
+		<h2>{{popup.titulo}}</h2>
+		<p>
+			{{popup.content}}			
+		</p>
+		<p ng-click="closePopup()" class="close">Fechar</p>
+	</div>
 </body>
 <script src="js/jquery.min.js"></script>
 <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
