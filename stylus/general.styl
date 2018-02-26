@@ -17,7 +17,7 @@ reset('all')
 	transition all 0.2s ease
 	
 html
-	height 100%
+	overflow-x hidden
 	
 body
 	width 100%
@@ -39,6 +39,15 @@ select::-ms-expand {
 
 .ng-cloak
 	display none !important
+	
+.mobile
+	display none !important
+	+below(760px)
+		display block !important
+.desk
+	display block !important
+	+below(760px)
+		display none !important
 	
 #banners
 	margin-bottom 40px
@@ -81,6 +90,7 @@ select::-ms-expand {
 				set-font-size(26px)
 				font-weight bold
 			& .plus
+				margin 0 auto
 				display table
 				color $txt-banner
 				&>div
@@ -163,6 +173,41 @@ select::-ms-expand {
 								set-font-size(22px)
 								& p
 									set-font-size(12px)
+			+below(470px)
+				& .size
+					font-weight bold
+					color $txt-banner
+					set-font-size(28px)				
+					line-height 28px
+					& .big
+						set-font-size(65px)
+				& .subtitle
+					set-font-size(10px)
+				& .plus
+					&>div
+						&:first-child
+							font-weight bold
+							set-font-size(50px)
+							padding-right 5px
+							line-height 45px
+						&:last-child
+							set-font-size(20px)
+				& .subtitle-small
+					set-font-size(12px)
+				& .promo
+					& .info
+						set-font-size(12px)
+					& .price
+						&>div
+							&:first-child
+								set-font-size(16px)
+							&:nth-child(2)
+								set-font-size(50px)
+								line-height 22px
+							&:nth-child(3)
+								set-font-size(16px)
+								& p
+									set-font-size(10px)
 	& .slick-dots
 		position absolute
 		bottom 20px
@@ -176,11 +221,57 @@ select::-ms-expand {
 					&:before
 						set-font-size(22px)
 						color $dot-focus
+	+below(760px)		
+		margin-bottom 0px
+		& .banner
+			display block
+			& .left, & .right
+				display block
+				width 100%
+				height 320px
+				& img
+					float inherit
+					height 100%
+			& .right
+				background-image none
+				background-color #33342f
+				margin-top -1px
+				& .highlight
+					center()
+					margin-top -50px
+					& .bloco-left
+						float left
+					& .promo
+						float right
+				&:after
+					top 0
+					bottom inherit
+					transform-origin center
+					transform scale(0.6) translateY(-80%)
+		& .slick-dots
+			bottom inherit
+			center()
+			margin-top -10px
+	+below(470px)			
+		& .banner				
+			& .right
+				height 250px
+				& .highlight
+					margin-top -25px
+					padding 0px 0px 0px 20px
+					& .bloco-left
+						width 50%
+					
 								
+
+.banner-mobile
+	background-image url('../images/orange-bg.jpg')
+	& img
+		max-width 100%
+		margin 0 auto
 						
 .contrate	
 	background-color #ffffff
-	border 1px solid #ffffff		
 	box-shadow 0px 0px 30px 0px rgba(0,0,0,0.1)
 	& .content
 		padding 0px 70px
@@ -232,11 +323,37 @@ select::-ms-expand {
 				& label
 					set-font-size(18px)
 	+below(760px)
+		box-shadow none
+		& .content
+			width 100%
+			& .form
+				width 95%
+				margin 0 auto
 		& .customer-type
 			margin-bottom 20px
 			padding-top 0px
 			& h2
-				display none
+				set-font-size(18px)
+				color #fff
+				background-color $dark
+				padding 20px 30% 20px 5%
+				margin-top -1px
+				text-transform uppercase
+				font-weight bold
+				position relative
+				&:after
+					content url('../images/arrow-down.png')
+					position absolute
+					centerH()
+					right 25px
+				&:before
+					height 100%
+					position absolute
+					content ""
+					right 79px
+					border 1px solid #d7460f
+					width 1px
+					top 0
 			&>div
 				position relative
 				text-align center
@@ -246,6 +363,8 @@ select::-ms-expand {
 					border 1px solid $mainColor	
 	+below(420px)
 		& .customer-type
+			& h2
+				set-font-size(16px)
 			&>div
 				& label
 					set-font-size(16px)
@@ -314,6 +433,9 @@ select::-ms-expand {
 						
 			
 						
+a.btn
+	text-decoration none
+							
 & .btn
 	cursor pointer
 	border-radius 28px
@@ -321,7 +443,7 @@ select::-ms-expand {
 	height 56px
 	width 100%
 	text-align center
-	border 1px solid $mainColor
+	border 1px solid $mainColor		
 	& p
 		color #fff
 		set-font-size(20px)
@@ -336,7 +458,18 @@ select::-ms-expand {
 		& p
 			color $mainColor
 		
-		
+.main-head
+	position relative
+	+below(760px)
+		& .btn
+			width 260px
+			margin 0 auto
+			height 40px
+			position absolute
+			centerW()
+			bottom 20px
+			font-weight bold
+			border 0px
 						
 input[type=text]
 	set-font-size(23px)
@@ -385,6 +518,8 @@ input[type=text]
 			overflow visible !important
 		& .slick-cloned
 			display none !important
+		+below(330px)
+			padding 0 30px
 	& .plano		
 		width 270px !important
 		background-color #fff
@@ -454,7 +589,41 @@ input[type=text]
 						set-font-size(56px)
 						line-height 40px
 					& .symbol
-						set-font-size(22px)				
+						set-font-size(22px)
+		+below(450px)
+			width 240px !important
+			height 372px		
+			border-radius 9px
+			& .size
+				height 150px
+				& h2
+					set-font-size(62px)
+					line-height 50px
+				& h3
+					set-font-size(13px)
+			& .price			
+				height 222px
+				&>div
+					& h3
+						set-font-size(24px)
+					& h2
+						set-font-size(26px)
+					& h5
+						set-font-size(10px)
+					& h4
+						set-font-size(14px)
+						margin-bottom 20px
+					& hr
+						width 40%
+						margin-bottom 20px
+					&>div
+						& span
+							set-font-size(12px)
+						& b
+							set-font-size(46px)
+							line-height 40px
+						& .symbol
+							set-font-size(18px)	
 	& #dots-planos
 		position relative
 		margin-bottom 50px
@@ -481,6 +650,8 @@ input[type=text]
 						padding 3px !important
 						
 						
+	+below(760px)
+		padding 35px 0 48px
 .divider
 	height 1px
 	width 100%
@@ -504,6 +675,8 @@ input[type=text]
 				text-align left
 				width 60%
 				set-font-size(52px)
+				&>span
+					display block	
 			& p
 				line-height 1.2
 				padding-top 20px
@@ -511,16 +684,50 @@ input[type=text]
 				set-font-size(15px)
 		& .produto.anima 
 			& img
-				animation anima-produto 3s linear 0s 1 normal none
+				animation anima-produto 2.6s linear
 				transform-origin center			
 	& .obs
 		color $obs
 		set-font-size(10px)
-		line-height 15px
 		& a
 			text-decoration none
 			font-weight bold
 			color $obs
+		+below(760px)
+			width 85%
+			text-align justify
+	+below(980px)
+		& .produtos
+			padding 0
+			&>div
+				padding 0px 12px
+				&:first-child
+					set-font-size(38px)
+	+below(760px)
+		& .produtos
+			&>div
+				& p
+					set-font-size(13px)
+	+below(650px)
+		& .produtos
+			display block
+			&>div
+				display block
+				width 100%
+				text-align center
+				padding 0 15% 20px
+				&:first-child					
+					text-align center
+					color $mainColor
+					width 100%
+					padding 0 15% 35px
+					& span
+						display inline
+	+below(450px)
+		&  .produtos
+			&>div
+				&:first-child
+					set-font-size(26px)
 	
 footer
 	text-align center
@@ -529,15 +736,18 @@ footer
 	width 620px
 	line-height 15px
 	padding 30px 0px
+	+below(760px)
+		&.content
+			set-font-size(9px)
+			width 90%
 
 .fade
 	z-index 4
 	position fixed
-	top 0
-	left 0
-	bottom 0
-	right 0
+	width 100%
+	height 100%
 	background-color rgba(0,0,0,0.75)
+	center()
 	
 #popup
 	position fixed
@@ -560,6 +770,14 @@ footer
 		color $mainColor
 		margin-top 20px
 		text-align right
+	+below(760px)
+		width 90%
+		padding 10px
+	+below(450px)
+		& h2
+			set-font-size(20px)
+		& p
+			set-font-size(15px)
 		
 @keyframes anima-produto{
 	10%, 90% {

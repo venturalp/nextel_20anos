@@ -3,15 +3,19 @@
 })();
 
 $(document).ready(function () {
-	$("a").on('click', function (event) {
-		if (this.hash !== "") {
-			event.preventDefault();
-			var hash = this.hash;
+	$("a[href*='#']").click(function (event) {
+		event.preventDefault();
+		var aux = $(this).attr('href').substr($(this).attr('href').indexOf('#'), $(this).attr('href').length);
 
+		if ($(aux).length != 0) {
+			$('html, body').stop();
 			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 800);
+				scrollTop: $(aux).offset().top
+			}, 900);
+		} else {
+			window.location = $(this).attr('href');
 		}
+
 	});
 
 	var SPMaskBehavior = function (val) {

@@ -3,7 +3,7 @@
 		$scope.configBanner = {
 			enabled: true,
 			autoplay: true,
-			draggable: false,
+			draggable: true,
 			autoplaySpeed: 6000,
 			dots: true
 		};
@@ -13,7 +13,7 @@
 		$scope.configPlanos = {
 			enabled: true,
 			autoplay: true,
-			draggable: false,
+			draggable: true,
 			dots: true,
 			slidesToShow: 3,
 			slidesToScroll: 1,
@@ -25,7 +25,32 @@
 				afterChange: function (event, slick, currentSlide, nextSlide) {
 					$scope.currentPlano = currentSlide;
 				}
-			}
+			},
+			responsive: [
+				{
+					breakpoint: 1070,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+						infinite: true,
+						dots: true
+					}
+    			},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+    			},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+    			}    
+  			]
 		};
 
 		$scope.produtos = [
@@ -42,13 +67,14 @@
 				txt: 'Pacote SMS'
 			}
 		]
-		
+
 		$scope.currentProduct = 0;
-		var animaProdutos = setInterval(function(){
+		
+		setInterval(function () {
+			$scope.currentProduct++;
 			if ($scope.currentProduct == $scope.produtos.length)
 				$scope.currentProduct = 0;
-			else
-				$scope.currentProduct++;			
+			$scope.$apply();
 		}, 3000)
 
 		document.onkeydown = function (event) {
@@ -68,7 +94,9 @@
 
 		$scope.closePopup = function () {
 			$scope.popup.open = false;
-			$scope.$apply();
+			if(!$scope.$$phase) {
+				$scope.$apply();
+			}
 		}
 
 		$scope.plans = [];
