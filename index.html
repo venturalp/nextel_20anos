@@ -5,10 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Nextel 20 Anos - Guilherme Ventura</title>
-	<link rel="stylesheet" href="fonts/styles.css">
-	<link rel="stylesheet" href="css/general.min.css">
+	<link rel="stylesheet" href="fonts/styles.css">	
 	<link rel="stylesheet" href="slick-carousel/slick/slick.css">
 	<link rel="stylesheet" href="slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet" href="node_modules/angular-toastr/dist/angular-toastr.min.css">
+	<link rel="stylesheet" href="css/general.min.css">
 </head>
 
 <body ng-app="nextelApp" ng-controller="mainCtrl">
@@ -122,11 +123,11 @@
 				<h2>Faça seu cadastro e ligaremos para você.</h2>
 				<div>
 					<label>
-						<input type="radio" name="cliente" value="cliente"/>
+						<input type="radio" name="cliente" value="cliente" ng-model="form.flagCliente"/>
 						Sou cliente
 					</label>				
 					<label>
-						<input type="radio" name="cliente" value="nao-cliente" checked/>
+						<input type="radio" name="cliente" value="nao-cliente" ng-model="form.flagCliente"/>
 						Não sou cliente
 					</label>
 				</div>
@@ -137,15 +138,16 @@
 				</div>
 				<div>
 					<div>
-						<input type="text" placeholder="* CPF/CNPJ" ng-model="form.cpf"/>
+						<input type="text" placeholder="* CPF/CNPJ" ng-model="form.cpf" id="cpfcnpj"/>
 					</div>	
 					<div>
 						<input type="text" placeholder="* TELEFONE" ng-model="form.fone" class="fone"/>
 						<a>+ Adicionar Número</a>
 					</div>	
 					<div>
-						<div class="btn">
-							<p>ENVIAR</p>
+						<div ng-class="sending?'btn sending': 'btn'" ng-click="sendRecord()">
+							<p ng-if="sending" class="no-animate">ENVIANDO...</p>
+							<p ng-if="!sending" class="no-animate">ENVIAR</p>
 						</div>
 					</div>	
 				</div>
@@ -228,6 +230,8 @@
 <script src="node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
 <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
 <script src="slick-carousel/slick/slick.min.js"></script>
+<script src="node_modules/angular-toastr/dist/angular-toastr.tpls.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
 <script src="angular-slick-carousel/dist/angular-slick.min.js"></script>
 <script src="js/app.js" type="text/javascript"></script>
 <script src="js/mainCtrl.js" type="text/javascript"></script>

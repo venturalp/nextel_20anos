@@ -11,28 +11,20 @@
 			success(res);
 		}
 
-		function register(dados) {
-//			var dados = {
-//				"partner_key": "1E4AD0F2-51D4-4827-9E43-4DF32733B99A",
-//				"content": {
-//					"str_nome_completo": "Guilherme teste",
-//					"str_cpf_cnpj": "229.401.891-53",
-//					"str_email": "guilherme.ventura@nextel.com.br",
-//					"num_ddd": "11",
-//					"num_telefone": "998989898",
-//					"bool_cliente": true
-//				}
-//			}
-			
-			$http.post('https://www.nextel.com.br/jsonregistration.aspx', dados).then(
-				function(res){
-					console.log(res);
-				},
-				
-				function(err){
-					console.warn(err);
+		function register(dados, success, fail) {
+			var dadosEnv = {
+				"partner_key": "1E4AD0F2-51D4-4827-9E43-4DF32733B99A",
+				"content": {
+					"str_nome_completo": dados.nome,
+					"str_cpf_cnpj": dados.cpf,
+					"str_email": "guilherme.ventura@nextel.com.br", //fixo pois não existe esse campo no form
+					"num_ddd": dados.fone.substr(0,2),
+					"num_telefone": dados.fone.substr(2),
+					"bool_cliente": (dados.flagCliente == 'cliente')
 				}
-			)
+			}
+			
+			$http.post('https://www.nextel.com.br/jsonregistration.aspx', dadosEnv).then(success, fail)
 		}
 
 		return {

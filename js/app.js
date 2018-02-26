@@ -1,5 +1,5 @@
 (function () {
-	angular.module("nextelApp", ['slickCarousel'])
+	angular.module("nextelApp", ['slickCarousel', 'ngAnimate', 'toastr'])
 })();
 
 $(document).ready(function () {
@@ -27,5 +27,5 @@ $(document).ready(function () {
 			}
 		};
 
-	$('.fone').mask(SPMaskBehavior, spOptions);
+	$('.fone').mask(SPMaskBehavior, spOptions);	
 });

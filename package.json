@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-animate": "^1.6.9",
+    "angular-toastr": "^2.1.1",
     "jquery-mask-plugin": "^1.14.13"
   },
   "devDependencies": {

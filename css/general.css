@@ -716,6 +716,13 @@ select::-ms-expand {
 .contrate .form>div:last-child>div:last-child {
   padding-left: 72px;
 }
+.contrate .form>div:last-child .btn.sending {
+  background-color: #4a4a4a;
+  border: 0px;
+}
+.contrate .form>div:last-child .btn.sending p {
+  color: #808080;
+}
 @media only screen and (max-width: 1200px) {
   .contrate .form>div:first-child {
     width: 70%;
@@ -1288,6 +1295,20 @@ footer {
     font-size: 15px;
     font-size: 0.9375rem;
   }
+}
+.toast {
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  -moz-opacity: 1 !important;
+  -khtml-opacity: 1 !important;
+  opacity: 1 !important;
+}
+.no-animate {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
 }
 @-moz-keyframes anima-produto {
   10%, 90% {

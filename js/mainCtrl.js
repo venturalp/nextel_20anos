@@ -1,5 +1,5 @@
 (function () {
-	angular.module("nextelApp").controller('mainCtrl', ['$scope', 'api', '$filter', function ($scope, api, $filter) {
+	angular.module("nextelApp").controller('mainCtrl', ['$scope', 'api', '$filter', 'toastr', function ($scope, api, $filter, $toastr) {
 		$scope.configBanner = {
 			enabled: true,
 			autoplay: true,
@@ -7,6 +7,17 @@
 			autoplaySpeed: 6000,
 			dots: true
 		};
+
+		function cleanForm(){
+			$scope.form = {
+				flagCliente: 'nao-cliente',
+				nome: '',
+				fone: '',
+				cpf:''
+			}
+		}
+		
+		cleanForm();
 
 		$scope.currentPlano = 0;
 
@@ -49,7 +60,7 @@
 						slidesToShow: 1,
 						slidesToScroll: 1
 					}
-    			}    
+    			}
   			]
 		};
 
@@ -68,8 +79,10 @@
 			}
 		]
 
+		$scope.sending = false;
+
 		$scope.currentProduct = 0;
-		
+
 		setInterval(function () {
 			$scope.currentProduct++;
 			if ($scope.currentProduct == $scope.produtos.length)
@@ -84,6 +97,7 @@
 					$scope.closePopup();
 			}
 		}
+				
 
 		$scope.popup = {}
 		$scope.openPopup = function () {
@@ -94,9 +108,54 @@
 
 		$scope.closePopup = function () {
 			$scope.popup.open = false;
-			if(!$scope.$$phase) {
+			if (!$scope.$$phase) {
 				$scope.$apply();
 			}
+		}
+
+		$scope.sendRecord = function () {
+
+			$scope.sending = true;
+
+			var auxRet = false;
+			
+			if ($scope.form.nome ==''){
+				$toastr.warning('Preencha o campo Nome');
+				auxRet = true;
+			}
+			
+			if ($scope.form.cpf ==''){
+				$toastr.warning('Preencha o campo CPF/CNPJ');
+				auxRet = true;
+			}
+			
+			if ($scope.form.fone ==''){
+				$toastr.warning('Preencha o campo Telefone');
+				auxRet = true;
+			}
+			
+			if (auxRet){
+				$scope.sending = false;
+				return;
+			}
+			
+			api.register($scope.form,
+				function (res) {
+					$toastr.success('Cadastro enviado com sucesso');
+					cleanForm();
+					$scope.sending = false;
+				},
+
+				function (err) {
+					$toastr.error('Erro ao enviar cadastro!');
+					$scope.sending = false;
+				}
+			)
+			
+			if (!$scope.$$phase) {
+				$scope.$apply();
+			}
+			
 		}
 
 		$scope.plans = [];
